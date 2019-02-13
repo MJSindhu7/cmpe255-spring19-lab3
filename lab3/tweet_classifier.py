@@ -25,7 +25,7 @@ def transform_to_features(data):
     features_nd = features.toarray()
     return features_nd
 
-def train_then_build_model(data_labels, features_nd):
+def train_then_build_model(data_labels, features_nd, data):
     from sklearn.cross_validation import train_test_split
     # TODO : set training % to 80%.
     X_train, X_test, y_train, y_test  = train_test_split(
@@ -58,7 +58,7 @@ def train_then_build_model(data_labels, features_nd):
 def process():
     data, data_labels = load_data()
     features_nd = transform_to_features(data)
-    train_then_build_model(data_labels, features_nd)
+    train_then_build_model(data_labels, features_nd, data)
 
 
 process()
